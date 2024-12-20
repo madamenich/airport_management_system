@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Management System</title>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar with Icon Logo -->
+<nav class="bg-gradient-to-r from-blue-500 to-blue-800 text-white py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <!-- Font Awesome Airplane Icon as Logo -->
+                    <i class="fas fa-plane-departure fa-2x"></i>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a th:href="@{/flights}" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Flights</a>
+                        <a th:href="@{/airports}" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Airports</a>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="ml-4 flex items-center md:ml-6">
+<!--                    <a th:href="@{/login}" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>-->
+<!--                    <a th:href="@{/register}" class="ml-4 bg-blue-500 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Gradient Background -->
+<div class="text-white py-16 flex content-center items-center justify-center" style="background: linear-gradient(90deg, rgba(29,78,216,1) 0%, rgba(59,130,246,1) 100%); height: 75vh;">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">Explore Our Airports and Flights</h1>
+        <p class="text-lg mb-8">Experience seamless air travel with our advanced management system.</p>
+        <a href="#search" class="bg-white text-blue-600 px-6 py-2 rounded-md font-medium hover:bg-gray-100">Start Your Journey</a>
+    </div>
+</div>
+
+<!-- Search Form Section -->
+<div class="container mx-auto px-4" id="search">
+    <div class="flex justify-center py-12">
+        <form th:action="@{/flights}" method="get" class="w-full max-w-lg">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label for="departure" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                        Departure Airport
+                    </label>
+                    <input type="text" name="departure" id="departure" placeholder="Enter departure airport"
+                           class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <label for="arrival" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                        Arrival Airport
+                    </label>
+                    <input type="text" name="arrival" id="arrival" placeholder="Enter arrival airport"
+                           class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Search Flights
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-blue-500 to-blue-800 text-white py-6">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-center">
+            © 2024 Airport Management System. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

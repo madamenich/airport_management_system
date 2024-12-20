@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-100 flex items-center justify-center min-h-screen">
+<div class="text-center">
+    <h1 class="text-3xl font-bold text-red-600">An Error Occurred</h1>
+    <p class="text-gray-700 mt-2" th:text="${message}">Something went wrong.</p>
+    <a href="/" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded">Go Home</a>
+</div>
+</body>
+</html>
